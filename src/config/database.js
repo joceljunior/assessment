@@ -1,10 +1,10 @@
 module.exports  =  {
     dialect: 'mysql',
-    host: 'localhost',
+    host: 'us-cdbr-east-06.cleardb.net' || 'localhost',
     port: 3306,
-    username: 'root',
-    password: 'Chinacus@17',
-    database: 'assessment',
+    username: 'b8a3fb36eba90b' || 'root',
+    password: '8e6e8c6b' || 'Chinacus@17',
+    database: 'heroku_fcebc19a9678ceb' || 'assessment',
     define: {
         freezeTableName: true,
         timestamps: true,
