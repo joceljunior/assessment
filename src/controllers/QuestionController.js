@@ -1,4 +1,5 @@
 const Customer = require('../models/Customer');
+const Question = require('../models/TemplateQuestion');
 
 class QuestionController {
     async postQuestions(req, res) {

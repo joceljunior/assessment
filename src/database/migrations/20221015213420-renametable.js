@@ -3,10 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.changeColumn('evaluation', 'answer', {
-      type: Sequelize.INTEGER,
-      allowNull: true,
-  })
+    return await queryInterface.renameTable('answerevaluation', 'evaluation');
   },
 
   async down (queryInterface, Sequelize) {
