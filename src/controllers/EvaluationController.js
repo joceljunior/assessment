@@ -6,8 +6,8 @@ class EvaluationController {
             const evaluations = req.body;
 
             await Evaluation.bulkCreate(evaluations);
-    
-            return res.status(200);
+            
+            return res.json({"message": true});
 
         } catch (error) {
             return res.status(400);
