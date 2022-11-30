@@ -1,4 +1,5 @@
 const Customer = require('../models/Customer');
+const Session = require('../models/Session');
 
 class CustomerController {
     async postCustomer(req, res) {
@@ -16,11 +17,37 @@ class CustomerController {
      }
 
      async getCustomerUrl(req, res) {
-        var url = req.params['url'];
-        var customer = await Customer.findAll({where: {url : url}
-        });
-  
-          return res.json(customer);
+        try {
+          var date = new Date().toLocaleTimeString();
+          var url = req.params['url'];
+          var customer = await Customer.findAll({where: {url : url}
+          });
+          var idCustomer = customer[0]["id"];
+          var session = {
+            "id": null,
+            "id_customer":idCustomer,
+            "created_at": date,
+            "updated_at": date
+          }
+          var obj = await Session.create(session);
+
+          var response = 
+            {
+              "id": idCustomer,
+              "name": customer[0]['name'],
+              "url": customer[0]['url'],
+              "created_at": customer[0]['created_at'],
+              "updated_at": customer[0]['updated_at'],
+              "id_session": obj['id']
+            }
+          
+    
+            return res.json(response);
+          
+        } catch (error) {
+          
+        }
+
       }
  
 

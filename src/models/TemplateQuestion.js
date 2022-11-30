@@ -11,6 +11,7 @@ class TemplateQuestion extends Model {
     }
     static associate(models) {
         this.belongsToMany(models.Customer, {foreignKey: 'id_question', through: 'customerquestion', as: 'customers'});
+        this.belongsToMany(models.TemplateOption, {foreignKey: 'id_option', through: 'questionoptions', as: 'options'});
     }
 }
 

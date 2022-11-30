@@ -5,6 +5,7 @@ class Evaluation extends Model {
         super.init({
             id_question: DataTypes.INTEGER,
             id_customer: DataTypes.INTEGER,
+            id_session: DataTypes.INTEGER,
             answer: DataTypes.INTEGER,
             comment: DataTypes.INTEGER,
         }, {

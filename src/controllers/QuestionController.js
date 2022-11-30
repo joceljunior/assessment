@@ -14,9 +14,15 @@ class QuestionController {
        var customerId = req.params['id'];
        var questions = await Customer.findByPk(customerId, 
         {
-        include: {
-            association: 'questions',
-        }
+        include: [
+            {
+                association: 'questions',
+            }
+            // , 
+            // {
+            //     association: 'options',
+            // }
+        ]
        });
  
          return res.json(questions);
