@@ -20,6 +20,7 @@ Session.init(connection);
 // Sector.associate(connection.models);
 Customer.associate(connection.models);
 Question.associate(connection.models);
+TemplateOption.associate(connection.models);
 
 // create migration
 // npx sequelize-cli migration:generate --name session

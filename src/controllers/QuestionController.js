@@ -1,4 +1,5 @@
 const Customer = require('../models/Customer');
+const TemplateQuestion = require('../models/TemplateQuestion');
 const Question = require('../models/TemplateQuestion');
 
 class QuestionController {
@@ -12,17 +13,20 @@ class QuestionController {
 
     async getQuestions(req, res) {
        var customerId = req.params['id'];
-       var questions = await Customer.findByPk(customerId, 
+       var questions = await TemplateQuestion.findAll( 
         {
-        include: [
-            {
-                association: 'questions',
-            }
-            // , 
-            // {
-            //     association: 'options',
-            // }
-        ]
+            include: [
+                {
+                    association: 'customers',
+                    where: {
+                        id: customerId
+                    }
+                }
+                , 
+                {
+                    association: 'options',
+                }
+            ]
        });
  
          return res.json(questions);
