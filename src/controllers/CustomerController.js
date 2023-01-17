@@ -59,12 +59,6 @@ class CustomerController {
   
           return res.json(customer);
     }
-
-    async testeDeploy(req, res) {
-      return res.json({
-        "message": "deploy success" 
-      });
-    }
 }
 
 module.exports = new CustomerController();
