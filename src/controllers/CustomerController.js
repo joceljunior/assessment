@@ -14,9 +14,9 @@ class CustomerController {
        var customers = await Customer.findAll();
  
          return res.json(customers);
-     }
+    }
 
-     async getCustomerUrl(req, res) {
+    async getCustomerUrl(req, res) {
         try {
           var date = new Date().toLocaleTimeString();
           var url = req.params['url'];
@@ -48,10 +48,9 @@ class CustomerController {
           
         }
 
-      }
+    }
  
-
-     async updateCustomer(req, res) {
+    async updateCustomer(req, res) {
         var customerEdit = req.body;
         var id = customerEdit["id"];
         var customer = await Customer.update({"name": customerEdit["name"], "url": customerEdit["url"]}, {where: {
@@ -59,7 +58,13 @@ class CustomerController {
           }});
   
           return res.json(customer);
-      }
+    }
+
+    async testeDeploy(req, res) {
+      return res.json({
+        "message": "deploy success" 
+      });
+    }
 }
 
 module.exports = new CustomerController();
