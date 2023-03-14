@@ -5,6 +5,7 @@ const routes = express.Router();
 
 
 routes.post('/postEvaluation', Controller.postEvaluation);
+routes.post('/postOption', Controller.postOption);
 
 
 module.exports = routes;

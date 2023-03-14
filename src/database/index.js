@@ -7,6 +7,7 @@ const Question = require('../models/TemplateQuestion');
 const Evaluation = require('../models/Evaluation');
 const Session = require('../models/Session');
 const TemplateOption = require('../models/TemplateOption');
+const EvaluationOption = require('../models/EvaluationOption');
 
 const connection = new Sequelize(dbConfig);
 
@@ -16,6 +17,7 @@ Question.init(connection);
 Evaluation.init(connection);
 TemplateOption.init(connection);
 Session.init(connection);
+EvaluationOption(connection);
 
 // Sector.associate(connection.models);
 Customer.associate(connection.models);

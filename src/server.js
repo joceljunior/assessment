@@ -20,5 +20,5 @@ app.use(evaluationRoutes);
 
 app.listen(port, () => {
     console.log();
-    console.log("Server Listening port 3000");
+    console.log(`Avaliaçãoes API Rodando na Porta ${port}`);
 });

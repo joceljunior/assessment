@@ -21,8 +21,7 @@ class QuestionController {
                     where: {
                         id: customerId
                     }
-                }
-                , 
+                }, 
                 {
                     association: 'options',
                 }
