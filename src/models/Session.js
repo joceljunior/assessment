@@ -1,4 +1,4 @@
-const {Model, DataTypes} = require('sequelize')
+const { Model, DataTypes } = require('sequelize')
 
 class Session extends Model {
     static init(connection) {
