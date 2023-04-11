@@ -36,7 +36,7 @@ class EvaluationController {
 
             await transactionInstance.commit();
             
-            return res.status(201).json({"message": true});
+            return res.status(201).json({"message": "Evaluations and options saved."});
 
         } catch (error) {
             await transactionInstance.rollback();
