@@ -1,0 +1,38 @@
+assessment
+- id
+- customer_id
+- description
+
+assessment_question
+- id 
+- assessment_id
+- question_id 
+- order
+
+assessment_question_answer
+- id
+- assessment_question_id
+- answer
+- comment
+
+assessment_question_answer_option
+- id
+- assessment_question_answer_id
+- question_option_id
+
+customer
+- id
+- name
+
+question
+- id
+- description
+- customer_id
+
+question_option
+- id
+- question_id
+- description
+  
+
+
