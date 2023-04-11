@@ -17,7 +17,7 @@ Question.init(connection);
 Evaluation.init(connection);
 TemplateOption.init(connection);
 Session.init(connection);
-EvaluationOption(connection);
+EvaluationOption.init(connection);
 
 // Sector.associate(connection.models);
 Customer.associate(connection.models);
