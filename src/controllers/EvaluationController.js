@@ -17,6 +17,7 @@ class EvaluationController {
                 await Evaluation.create({
                     id_question: evaluations[i].id_question,
                     id_customer: evaluations[i].id_customer,
+                    id_session: evaluations[i].id_session,
                     answer: evaluations[i].answer,
                     comment: evaluations[i].comment
                 }, {
