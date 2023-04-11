@@ -6,27 +6,29 @@ class EvaluationController {
 
     async postEvaluation(req, res) {
         try {
-            const evaluations_json = req.body;
+            const evaluations = req.body;
             
             // const t = await sequelize.transaction({
             //     isolationLevel: Sequelize.Transaction.READ_UNCOMMITED,
             // });
 
             // await connection.transaction(async function (transaction) {
-                const evaluation = await Evaluation.create({
-                    id_question: evaluations_json.id_question,
-                    id_customer: evaluations_json.id_customer,
-                    answer: evaluations_json.answer,
-                    comment: evaluations_json.comment
+            for (let i in evaluations) {
+                await Evaluation.create({
+                    id_question: evaluations[i].id_question,
+                    id_customer: evaluations[i].id_customer,
+                    answer: evaluations[i].answer,
+                    comment: evaluations[i].comment
                 });            
 
-                for (let i in evaluations_json.options) {
-                    const evaluationOption = await EvaluationOption.create({
-                        id_question: evaluations_json.id_question,
-                        id_session: evaluations_json.id_session,
-                        id_option: evaluations_json.options[i],
+                for (let i1 in evaluations[i].options) {
+                    await EvaluationOption.create({
+                        id_question: evaluations[i].id_question,
+                        id_session: evaluations[i].id_session,
+                        id_option: evaluations[i].options[i1],
                     });            
                 }
+            }
             // });
             
             return res.status(201).json({"message": true});
