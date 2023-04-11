@@ -1,4 +1,3 @@
-// const connection = require('../database/index');
 // const { Sequelize, sequelize } = require('../models');
 const Evaluation = require('../models/Evaluation');
 const EvaluationOption = require('../models/EvaluationOption');
