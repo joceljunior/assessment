@@ -6,7 +6,7 @@ class Evaluation extends Model {
             id_question: DataTypes.INTEGER,
             id_customer: DataTypes.INTEGER,
             id_session: DataTypes.INTEGER,
-            answer: DataTypes.INTEGER,
+            answer: DataTypes.DOUBLE,
             comment: DataTypes.INTEGER,
         }, {
             sequelize: connection
