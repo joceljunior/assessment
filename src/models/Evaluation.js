@@ -9,7 +9,8 @@ class Evaluation extends Model {
             answer: DataTypes.DOUBLE,
             comment: DataTypes.INTEGER,
         }, {
-            sequelize: connection
+            sequelize: connection,
+            tableName: 'evaluation'
         })
     }
 }

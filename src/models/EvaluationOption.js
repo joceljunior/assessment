@@ -7,7 +7,8 @@ class EvaluationOption extends Model {
             id_session: DataTypes.INTEGER,
             id_option: DataTypes.INTEGER,
         }, {
-            sequelize: connection
+            sequelize: connection,
+            tableName: 'evaluationOption'
         })
     }
 }

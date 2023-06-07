@@ -11,9 +11,14 @@ class CustomerController {
     }
 
     async getCustomer(req, res) {
-       var customers = await Customer.findAll();
- 
-         return res.json(customers);
+      try {
+        var customers = await Customer.findAll();
+        return res.json(customers);
+
+      } catch (error) {
+        console.log(error)
+      }
+
     }
 
     async getCustomerUrl(req, res) {

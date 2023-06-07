@@ -7,7 +7,8 @@ class Customer extends Model {
             url: DataTypes.STRING,
             
         }, {
-            sequelize: connection
+            sequelize: connection,
+            tableName: 'customer'
         })
     }
 

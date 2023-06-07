@@ -1,13 +1,13 @@
 module.exports  =  {
     dialect: 'mysql',
-    host: 'us-cdbr-east-06.cleardb.net',
+    host: 'testesapirjh.c9puqxuvse9d.us-east-2.rds.amazonaws.com',
     // host: 'localhost',
     port: 3306,
-    username: 'b2cdb8f4d9de26',
+    username: 'admin',
     // username: 'root',
-    password: '75984f56',
+    password: '?mfV?t}&P~&l)u>',
     // password: 'Chinacus@17',
-    database: 'heroku_f85231217c42a64',
+    database: 'assessment',
     // database: 'assessment',
     define: {
         freezeTableName: true,
